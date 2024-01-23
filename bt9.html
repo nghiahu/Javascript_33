@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bt9</title>
+    <style>
+        body > button {
+            background-color: rgb(139, 211, 139);
+            padding: 10px;
+            border: none;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <input id="infor" type="text">
+    <button onclick="change()">edit item</button>
+
+    <ul id="List">
+        <li onclick="editItem(this)"><span>Ai đó A</span> <button>edit</button></li>
+        <li onclick="editItem(this)"><span>Ai đó B</span> <button>edit</button></li>
+        <li onclick="editItem(this)"><span>Ai đó C</span> <button>edit</button></li>
+    </ul>
+
+    <script>
+        function change() {
+            const selectedItem = document.querySelector("ul li.active span");
+            if (selectedItem) {
+                selectedItem.textContent = document.getElementById("infor").value;
+                selectedItem.parentElement.classList.remove("active");
+                document.getElementById("infor").value = "";
+            }
+        }   
+
+        function editItem(item) {
+            removeActive();
+            item.classList.add("active");
+            document.getElementById("infor").value = item.querySelector("span").textContent;
+        }
+
+        function removeActive() {
+            const activeItem = document.querySelector("ul li.active");
+            if (activeItem) {
+                activeItem.classList.remove("active");
+            }
+        }
+    </script>
+</body>
+</html>

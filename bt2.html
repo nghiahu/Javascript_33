@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let but = document.createElement("button");
+        but.innerHTML="Press to say hi";
+        function sayHello() {
+        alert("Xin chào");
+        }
+        but.onclick = sayHello;
+        let body = document.getElementsByTagName("body")[0];
+        body.appendChild(but);
+        but.style.backgroundColor = "cyan";
+        but.style.borderRadius = "12%";
+        but.style.padding = "10px";
+        but.style.marginLeft = "500px";
+        but.style.marginTop = "300px";
+    </script>
+</body>
+</html>
